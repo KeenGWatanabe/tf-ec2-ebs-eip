@@ -113,7 +113,7 @@ resource "aws_instance" "rger_web" {
   instance_type          = var.settings.web_app.instance_type
   subnet_id              = aws_subnet.rger_public_subnet[count.index].id
   # key_name               = aws_key_pair.rger_kp.key_name
-  key_name                = "roger_linux_kp" # rger_linux_kp / rger_win_kp
+  key_name                = "rger_kp" # rger_linux_kp / rger_win_kp
   vpc_security_group_ids = [aws_security_group.rger_web_sg.id]
   tags = {
     Name = "rger_web_${count.index}"
